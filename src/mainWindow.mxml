@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   xmlns:cos="*"
+			   minWidth="500" minHeight="500" backgroundColor="#999999" xmlns:local="*"  backgroundAlpha = "0"
+			   creationComplete = "SWFCapabilities()"
+			   applicationComplete = "_init()" >
+	<fx:Declarations>
+		<s:Animate id = "moveupAnimate" target="{controlbarContainer}" duration="200">
+			<s:SimpleMotionPath property = "bottom" valueFrom="-50" valueTo="0"/>
+		</s:Animate> 
+		<s:Animate id = "movedownAnimate" target="{controlbarContainer}" duration="200">
+			<s:SimpleMotionPath property = "bottom" valueFrom="0" valueTo="-50"/>
+		</s:Animate> 
+		<!--<s:Rotate3D  id = "hideAnimate" angleYFrom="0" angleYTo="90" target="{volumeToolbar}" duration="200" autoCenterTransform="true"/>-->
+		<!--<s:Rotate3D  id = "showAnimate" angleYFrom="90" angleYTo="0" target="{volumeToolbar}" duration="200" autoCenterTransform="true"/>-->
+	</fx:Declarations>
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		s|Label{
+			font-size:16;
+			color:#fff;
+		}
+	</fx:Style>
+	<fx:Script>
+		<![CDATA[
+			//包含外部actionscript文件；
+		//include "../lib/vrplayer/Resource.as";
+		include "../lib/vrplayer/VRPlayer.as";
+		private function changeText():void
+		{
+			volume.text = new String(volumeslider.value);
+		}
+		]]>
+	</fx:Script>
+	<s:Image id = "logo" source = "{vrbobologo}" height="40" visible ="true" left="-80" top="20" smooth ="true"/>
+	<!--播放器界面控制-->
+	<s:SkinnableContainer id="controlbarContainer" width="100%" height="50" backgroundColor="#000000" backgroundAlpha = "0.5" 
+						  bottom="0" visible = "true">
+			<cos:progressbar id="progressInstance" top="0" barHeight="50" progressLeft="60" progressRight="300" progressStage="0" bufferingProgressStage="0"></cos:progressbar>
+			<s:Label id="time" text ="0:00:00 / 0:00:00" right="310" top="20" fontSize="13" />
+			<s:Image id = "playbtn" source = "{play}" width="40" height="40" visible ="true" left = "10" top="5"  smooth="true"/>
+			<s:Image id = "soundbtn" source = "{soundBtnPic}"  width="40" height="40" right="122" visible ="true" bottom="5"  smooth="true"/>
+			<s:HSlider id="volumeslider" snapInterval = "1" height="10"  maximum="100" minimum="0" width="80" 
+					right="200" bottom="20" liveDragging="true" value="40" showDataTip="false" change="changeText();" visible="true" /> 
+			<s:Label id="volume" width="30" right="170" height="30" textAlign="center" fontSize="12" top="20" text="40"></s:Label>
+			<s:Image id = "dbscreen" source = "{dbScreen}"  width="40" height="40" right="70" visible ="true"  top="5"  smooth="true"/>
+			<s:Image id = "fullscreen" source = "{fullScreen}" width="40" height="40" right="20" visible ="true"  top="5"  smooth="true"/>
+	</s:SkinnableContainer>
+</s:Application>
+
+  

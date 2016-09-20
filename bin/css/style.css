@@ -1,0 +1,46 @@
+/*body 
+{
+    
+}*/
+html, 
+body{ 
+	height:auto;
+	width:100% ;
+}
+body { 
+	margin:0;
+	text-align:center;
+}
+.swf-wrapper{
+	
+	height:auto;
+	margin:0;
+	display:inline-block;
+}
+.swf-wrapper object{
+	
+}
+#alt-content{
+	width:100%;
+	height:auto;
+	display:inline-block;
+	text-align:center;
+}
+.preview{
+	width:20%;
+	height:auto;
+	display:inline-block;
+	margin: 0;
+	position:relative;
+	left:0;
+}
+.preview img{
+	width:200px;
+	height:150px;
+	display: inline-block;
+}
+.item-1,
+.item-2,
+.item-3{
+	padding:10px;
+}
