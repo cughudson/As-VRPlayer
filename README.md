@@ -1,5 +1,2 @@
-1. AS-VR播放器是一款使用actionscript语言给予flex技术开发的一款VR全景视频播放器，播放器采用了AWay3D三维引擎库；
-2. 该播放器实现了基本的VR视频播放器功能；
-3. 由于绝大多数移动设备都不支持flash技术，所以该播放器没有实现陀螺仪功能；
-4. 使用flashDevelop进行开发；
-5. 播放测试文件使用的是网络上的视频资源；
+# VR Player(ActionScript)
+An VR Player Using ActionScript Created
